@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TLT Multiple Choice Assessment Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="assessment" aria-labelledby="assessment-title">
+        <header class="assessment__header">
+          <div>
+            <p class="eyebrow">TLT assessment</p>
+            <h1 id="assessment-title">Web Development Fundamentals</h1>
+          </div>
+          <div class="score-card" aria-live="polite">
+            <span class="score-card__label">Progress</span>
+            <strong id="progressText">Question 1 of 4</strong>
+          </div>
+        </header>
+
+        <div class="progress-track" aria-hidden="true">
+          <span id="progressBar"></span>
+        </div>
+
+        <article class="question-panel">
+          <p id="questionTopic" class="question-panel__topic"></p>
+          <h2 id="questionText"></h2>
+
+          <form id="answerForm" class="answer-list">
+            <fieldset>
+              <legend class="sr-only">Choose one answer</legend>
+              <div id="answerOptions"></div>
+            </fieldset>
+
+            <div class="actions">
+              <button type="submit" id="submitButton">Submit answer</button>
+              <button type="button" id="nextButton" class="secondary" hidden>Next question</button>
+            </div>
+          </form>
+
+          <section id="feedback" class="feedback" aria-live="polite" hidden></section>
+        </article>
+
+        <section id="resultsPanel" class="results" hidden>
+          <h2>Assessment complete</h2>
+          <p id="finalScore"></p>
+          <ol id="reviewList" class="review-list"></ol>
+          <button type="button" id="restartButton">Restart assessment</button>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
